@@ -53,11 +53,13 @@ body {
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 .heading-primary {
     color: #fff;
     text-transform: uppercase;
+    margin-bottom: 60px;
 
     backface-visibility: hidden; /* Исправляет "тряску" при анимации */
 }
@@ -67,7 +69,7 @@ body {
     display: block;
 
 }
-
+  
 .heading-primary-main {
     font-size: 60px;
     font-weight: 400;
@@ -95,7 +97,9 @@ body {
     animation-timing-function: ease-out; */
 }
 
+/*-----------------------------------------*/
 /*---------- Анимация в CSS ---------------*/
+/*-----------------------------------------*/
 
 @keyframes moveInLeft {
     0% {
@@ -127,4 +131,73 @@ body {
         opacity: 1;
         transform: translate(0);
     }
+}
+
+@keyframes moveButton {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+        animation-duration: 2s;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+/*---------------------------------------------------------*/
+/*------------------BUTTONS--------------------------------*/
+/*---------------------------------------------------------*/
+
+.btn:link, /* :link - нормальное состояние */
+.btn:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 15px 40px;
+        border-radius: 100px;
+        display: inline-block;
+        transition: all 0.2s;
+        position: relative;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0,0,0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #777
+}
+
+.btn::after {
+    content: ""; /* Первое обязательное свойство */
+    display: inline-block; /* Второе обязательное свойство. Такое-же как у родителя */
+    height: 100%; /* Свойства наследуются у родителя */
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+}
+
+.btn-white::after  {
+    background-color: #fff;
+}
+
+.btn:hover::after { /* Если наводим на псевдоэлемент */
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated {
+    animation: moveButton 0.5s ease-out .75s;
+    animation-fill-mode: backwards; /* До начала анимации не показывает стили (и кнопку) */
 }
