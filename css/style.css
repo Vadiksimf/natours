@@ -419,7 +419,11 @@ body {
       background-color: #fff;
       box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
       .card__details {
-        padding-bottom: 7rem; }
+        padding-bottom: 7rem; } }
+    @media (max-width: 56.25em) and (max-width: 37.5em) {
+      .card__details {
+        padding-top: 0; } }
+  @media (max-width: 56.25em) {
       .card__side {
         height: auto;
         position: relative;
@@ -453,9 +457,17 @@ body {
         left: 0;
         transform: translate(0);
         width: 100%;
-        padding: 4rem; }
+        padding: 4rem; } }
+    @media (max-width: 56.25em) and (max-width: 37.5em) {
+      .card__cta {
+        padding: 4rem 2rem 2rem; } }
+  @media (max-width: 56.25em) {
       .card__price-box {
-        margin-bottom: 3rem; }
+        margin-bottom: 3rem; } }
+    @media (max-width: 56.25em) and (max-width: 37.5em) {
+      .card__price-box {
+        margin-bottom: 1rem; } }
+  @media (max-width: 56.25em) {
       .card__price-value {
         font-size: 4rem; } }
 
@@ -648,7 +660,7 @@ body {
     margin-bottom: 8rem; }
   @media (max-width: 56.25em) {
     .row {
-      max-width: 50rem;
+      max-width: 70rem;
       padding: 0 3rem; } }
   @media (max-width: 56.25em) {
     .row {
@@ -923,18 +935,45 @@ body {
     opacity: 0;
     transform: scale(0) translate(-50%, -50%);
     transition: all .4s .2s; }
+    @media (max-width: 75em) {
+      .popup__content {
+        width: 85%; } }
+    @media (max-width: 37.5em) {
+      .popup__content {
+        width: 90%; } }
   .popup__left {
     width: 33.3333333%;
     display: table-cell;
     vertical-align: middle; }
+    @media (max-width: 75em) {
+      .popup__left {
+        display: block;
+        height: 30%;
+        width: 100%;
+        object-fit: cover;
+        text-align: center;
+        background-color: #000; } }
+    @media (max-width: 37.5em) {
+      .popup__left {
+        display: none; } }
   .popup__right {
-    width: 66.6666667%;
+    width: 100%;
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem; }
+    @media (max-width: 75em) {
+      .popup__right {
+        display: block; } }
+    @media (max-width: 37.5em) {
+      .popup__right {
+        padding: 3rem 2rem; } }
   .popup__img {
     width: 100%;
     display: block; }
+    @media (max-width: 75em) {
+      .popup__img {
+        display: inline-block;
+        width: 49%; } }
   .popup__text {
     font-size: 1.4rem;
     margin-bottom: 4rem;
@@ -948,6 +987,9 @@ body {
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto; }
+    @media (max-width: 37.5em) {
+      .popup__text {
+        column-count: 1; } }
   .popup:target {
     opacity: 1;
     visibility: visible; }
@@ -966,6 +1008,10 @@ body {
       display: inline-block;
       line-height: 1;
       padding: 1rem; }
+      @media (max-width: 37.5em) {
+        .popup__close:link, .popup__close:visited {
+          top: 1rem;
+          right: 2rem; } }
     .popup__close:hover {
       transform: translateY(-1px);
       color: #55c57a; }
@@ -1000,6 +1046,9 @@ body {
   @media (max-width: 56.25em) {
     .section-cards {
       padding: 20rem 0 15rem 0; } }
+  @media (max-width: 56.25em) {
+    .section-cards .row {
+      max-width: 50rem; } }
 
 .section-stories {
   padding: 15rem 0;
@@ -1036,3 +1085,13 @@ body {
     @media (max-width: 56.25em) {
       .book__form {
         width: 100%; } }
+
+@media (max-width: 37.5em) {
+  .section-about {
+    padding-bottom: 10rem; }
+  .section-cards {
+    padding: 15rem 0 8rem 0; }
+  .section-stories {
+    padding: 6rem 0; }
+  .section-book {
+    padding: 6rem 0; } }
